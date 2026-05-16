@@ -1,18 +1,69 @@
 aid: lenovo
-url: https://raw.githubusercontent.com/api-evangelist/lenovo/refs/heads/main/apis.yml
 name: Lenovo
-type: Index
+description: >-
+  Lenovo Group is a Chinese multinational technology company and one of the
+  world's largest personal computer vendors by unit sales. Lenovo designs,
+  manufactures, and sells PCs, tablets, smartphones, workstations, servers,
+  storage, and data center infrastructure solutions globally. Lenovo exposes a
+  REST API for its XClarity Administrator data center management platform and
+  publishes open-source projects through its GitHub organization, but does not
+  operate a general-purpose consumer or partner developer portal.
+kind: company
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Technology
+  - Data Center
   - Hardware
-  - Personal Computers
   - Infrastructure
-description: 'A Chinese multinational technology company and the world''s largest personal computer vendor by unit sales. Designs, manufactures, and sells PCs, tablets, smartphones, servers, and IT infrastructure solutions globally.'
+  - Personal Computers
+  - Servers
+  - Technology
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/lenovo/refs/heads/main/apis.yml
 created: '2026-05-05'
-modified: '2026-05-05'
+modified: '2026-05-16'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: lenovo:lenovo-xclarity-administrator-rest-api
+    name: Lenovo XClarity Administrator REST API
+    description: >-
+      The Lenovo XClarity Administrator REST API provides programmatic access
+      to XClarity Administrator data and services from applications running
+      outside of the XClarity Administrator framework. It supports managing
+      Lenovo servers, storage, and switches, including inventory, firmware
+      updates, configuration patterns, events, and OS deployment, and is
+      complemented by PowerShell, Python, and Ruby toolkits.
+    humanURL: https://pubs.lenovo.com/lxca_scripting/
+    tags:
+      - Data Center
+      - Infrastructure Management
+      - REST API
+      - Servers
+    properties:
+      - type: Documentation
+        url: https://pubs.lenovo.com/lxca_scripting/
+      - type: APIReference
+        url: https://pubs.lenovo.com/lxca_scripting/rest_apis
+      - type: ProductPage
+        url: https://pubs.lenovo.com/lxca/
 common:
   - type: Website
     url: https://www.lenovo.com/
+  - type: AboutUs
+    url: https://www.lenovo.com/us/en/about/
+  - type: Products
+    url: https://www.lenovo.com/us/en/d/sale/all-products/
+  - type: DataCenterSupport
+    url: https://datacentersupport.lenovo.com/
+  - type: PartnerHub
+    url: https://www.lenovopartnerhub.com/
+  - type: GitHubOrganization
+    url: https://github.com/lenovo
+  - type: InvestorRelations
+    url: https://investor.lenovo.com/
+  - type: News
+    url: https://news.lenovo.com/
+  - type: Careers
+    url: https://www.lenovo.com/us/en/about/careers/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
