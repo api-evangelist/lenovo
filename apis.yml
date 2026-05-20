@@ -46,6 +46,8 @@ apis:
       - type: ProductPage
         url: https://pubs.lenovo.com/lxca/
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/lenovo
   - type: Website
     url: https://www.lenovo.com/
   - type: AboutUs
