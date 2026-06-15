@@ -1,0 +1,1047 @@
+{
+  "item": [
+    {
+      "id": "0714d1c8-67e2-4929-a7bd-563b62611374",
+      "name": "Sessions",
+      "description": {
+        "content": "Authenticate and manage XClarity Administrator sessions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "476b1a05-75f5-461b-b334-27dcebef620f",
+          "name": "Create a session",
+          "request": {
+            "name": "Create a session",
+            "description": {
+              "content": "Authenticate to XClarity Administrator with a user ID and password.\nOn success the response sets session cookies (`JSESSIONID`, `csrf`,\n`inactivityTimeout`, `user`) and returns a CSRF token that must be\nincluded as `X-Csrf-Token` on subsequent requests.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the XClarity Administrator server",
+                  "type": "any",
+                  "value": "{{xclarityHost}}",
+                  "key": "xclarityHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"UserId\": \"<string>\",\n  \"Password\": \"<password>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "690320bc-e7b5-4e42-ad45-6728b3da46c8",
+              "name": "Session created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"UserId\": \"<string>\",\n  \"Password\": \"<password>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Session cookies (`JSESSIONID`, `csrf`, `inactivityTimeout`, `user`).",
+                  "key": "Set-Cookie",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"csrf\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da2e70d8-10a9-4a0b-a152-915cefb21959",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"UserId\": \"<string>\",\n  \"Password\": \"<password>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f907da69-8442-4a33-ba2f-388db1c5e5ba",
+      "name": "Inventory",
+      "description": {
+        "content": "Query inventory of managed devices.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dfb2f5ae-a6ee-4b70-b5ae-7cb29ee4407e",
+          "name": "List nodes",
+          "request": {
+            "name": "List nodes",
+            "description": {
+              "content": "Retrieve properties for all managed servers and Flex System storage devices.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "nodes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the XClarity Administrator server",
+                  "type": "any",
+                  "value": "{{xclarityHost}}",
+                  "key": "xclarityHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dba8d0d5-46bd-47f4-b4e4-77d7c598d60b",
+              "name": "A list of nodes.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nodes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"nodeList\": [\n    {\n      \"uuid\": \"string\",\n      \"name\": \"string\",\n      \"machineType\": \"string\",\n      \"model\": \"string\",\n      \"serialNumber\": \"string\",\n      \"status\": {\n        \"key_0\": 8871.211514118646,\n        \"key_1\": false\n      }\n    },\n    {\n      \"uuid\": \"string\",\n      \"name\": \"string\",\n      \"machineType\": \"string\",\n      \"model\": \"string\",\n      \"serialNumber\": \"string\",\n      \"status\": {\n        \"key_0\": false\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a5ed87f-d685-4fe5-9c8d-1bc5f8f48941",
+          "name": "Get a node by UUID",
+          "request": {
+            "name": "Get a node by UUID",
+            "description": {
+              "content": "Retrieve properties for a specific server.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "nodes",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the managed node."
+                },
+                {
+                  "description": "Hostname or IP address of the XClarity Administrator server",
+                  "type": "any",
+                  "value": "{{xclarityHost}}",
+                  "key": "xclarityHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4e94d20c-4caa-443d-bd34-ddecdb7803e2",
+              "name": "Node properties.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nodes",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the managed node."
+                    },
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"string\",\n  \"name\": \"string\",\n  \"machineType\": \"string\",\n  \"model\": \"string\",\n  \"serialNumber\": \"string\",\n  \"status\": {\n    \"key_0\": true,\n    \"key_1\": 123\n  },\n  \"key_0\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1f80b93b-d775-437a-af32-b0fe0fa8022a",
+              "name": "Node not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nodes",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the managed node."
+                    },
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90eee3a9-b28f-4eaa-ba93-b9703cba1746",
+          "name": "Modify a node",
+          "request": {
+            "name": "Modify a node",
+            "description": {
+              "content": "Modify properties of a specific server, including operations such as\nturning location LEDs on or off.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "nodes",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the managed node."
+                },
+                {
+                  "description": "Hostname or IP address of the XClarity Administrator server",
+                  "type": "any",
+                  "value": "{{xclarityHost}}",
+                  "key": "xclarityHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 7664.275369498087,\n  \"key_1\": 7997,\n  \"key_2\": 1418.1036896130572,\n  \"key_3\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3f149436-6fb4-4769-aba4-201a4118bff3",
+              "name": "Node updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nodes",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the managed node."
+                    },
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"string\",\n  \"key_1\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "36d2b42c-1b10-440e-a007-e97de2c7cdf5",
+              "name": "Node not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nodes",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the managed node."
+                    },
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"string\",\n  \"key_1\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7bc52ae5-78bf-46a0-8310-fad6aa5e8f1d",
+          "name": "List storage devices",
+          "request": {
+            "name": "List storage devices",
+            "description": {
+              "content": "Retrieve properties for all managed storage devices.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "storage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the XClarity Administrator server",
+                  "type": "any",
+                  "value": "{{xclarityHost}}",
+                  "key": "xclarityHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d3d066de-7e35-45e1-bab5-9bfcba69a073",
+              "name": "A list of storage devices.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "storage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"storageList\": [\n    {\n      \"key_0\": 205.98433230643587,\n      \"key_1\": \"string\"\n    },\n    {\n      \"key_0\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f42c7700-45b1-4263-98f2-f6caa9988b75",
+          "name": "List switches",
+          "request": {
+            "name": "List switches",
+            "description": {
+              "content": "Retrieve properties for all managed Flex System and RackSwitch switches.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "switches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the XClarity Administrator server",
+                  "type": "any",
+                  "value": "{{xclarityHost}}",
+                  "key": "xclarityHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2de1060a-2969-4c55-894b-536edf614ece",
+              "name": "A list of switches.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "switches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"switchList\": [\n    {\n      \"key_0\": 6106.200170359713,\n      \"key_1\": \"string\"\n    },\n    {\n      \"key_0\": true,\n      \"key_1\": 762.5264774103468\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9cf215db-6c09-4bb6-ab6a-3ebaa6e956c7",
+          "name": "List canisters",
+          "request": {
+            "name": "List canisters",
+            "description": {
+              "content": "Retrieve properties and metrics for all Flex System storage controllers (canisters).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "canisters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the XClarity Administrator server",
+                  "type": "any",
+                  "value": "{{xclarityHost}}",
+                  "key": "xclarityHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5c153137-91b7-43db-8671-4912fdaf1c4c",
+              "name": "A list of canisters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "canisters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"canisterList\": [\n    {\n      \"key_0\": false\n    },\n    {\n      \"key_0\": true,\n      \"key_1\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "608454b2-556c-44a3-b414-e8f2ad508b81",
+          "name": "List cabinets",
+          "request": {
+            "name": "List cabinets",
+            "description": {
+              "content": "Retrieve properties for all configured cabinets (racks) and the devices placed in them.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cabinet"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the XClarity Administrator server",
+                  "type": "any",
+                  "value": "{{xclarityHost}}",
+                  "key": "xclarityHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "59d6a504-18a6-433f-b3ae-28e548cc56d3",
+              "name": "A list of cabinets and their device placements.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cabinet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": false,\n  \"key_2\": 4607\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the XClarity Administrator server",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "lxca.example.com",
+      "key": "xclarityHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{xclarityHost}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "JSESSIONID"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f73ade6b-6297-4b21-8648-d6580f68ccca",
+    "name": "Lenovo XClarity Administrator REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Programmatic access to Lenovo XClarity Administrator (LXCA) for managing\nLenovo servers, storage, and switches. The API surface includes session\nauthentication, inventory of managed devices (servers, storage,\nswitches, cabinets, canisters), and many other categories (firmware\nupdates, OS deployment, events, jobs, configuration patterns).\n\nOnly a representative subset of inventory and session endpoints is\nmodeled here, drawn directly from the public XClarity Administrator\nREST API reference. See the documentation links for the full catalog.\n\n\nContact Support:\n Name: Lenovo XClarity Documentation",
+      "type": "text/plain"
+    }
+  }
+}
