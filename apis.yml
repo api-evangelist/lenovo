@@ -46,6 +46,10 @@ apis:
       - type: ProductPage
         url: https://pubs.lenovo.com/lxca/
 common:
+  - type: DomainSecurity
+    url: security/lenovo-domain-security.yml
+  - type: Authentication
+    url: authentication/lenovo-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/lenovo
   - type: Website
@@ -66,6 +70,8 @@ common:
     url: https://news.lenovo.com/
   - type: Careers
     url: https://www.lenovo.com/us/en/about/careers/
+  - url: https://news.lenovo.com/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

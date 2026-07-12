@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/lenovo-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - cookie
+schemes:
+- name: sessionCookie
+  type: apiKey
+  in: cookie
+  parameter: JSESSIONID
+  description: |-
+    Session cookie issued by `POST /sessions`. Requests also require
+    the `X-Csrf-Token` header populated from the session response.
+  sources:
+  - openapi/lenovo-openapi.yml
