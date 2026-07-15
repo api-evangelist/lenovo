@@ -46,6 +46,8 @@ apis:
       - type: ProductPage
         url: https://pubs.lenovo.com/lxca/
 common:
+  - type: AgenticAccess
+    url: agentic-access/lenovo-agentic-access.yml
   - type: DomainSecurity
     url: security/lenovo-domain-security.yml
   - type: Authentication
