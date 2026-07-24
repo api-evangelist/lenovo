@@ -1,0 +1,105 @@
+openapi: 3.1.0
+info:
+  title: Lenovo XClarity Administrator REST Inventory Sessions API
+  description: 'Programmatic access to Lenovo XClarity Administrator (LXCA) for managing
+
+    Lenovo servers, storage, and switches. The API surface includes session
+
+    authentication, inventory of managed devices (servers, storage,
+
+    switches, cabinets, canisters), and many other categories (firmware
+
+    updates, OS deployment, events, jobs, configuration patterns).
+
+
+    Only a representative subset of inventory and session endpoints is
+
+    modeled here, drawn directly from the public XClarity Administrator
+
+    REST API reference. See the documentation links for the full catalog.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Lenovo XClarity Documentation
+    url: https://pubs.lenovo.com/lxca_scripting/
+  license:
+    name: Lenovo Proprietary
+servers:
+- url: https://{xclarityHost}
+  description: Lenovo XClarity Administrator management server
+  variables:
+    xclarityHost:
+      default: lxca.example.com
+      description: Hostname or IP address of the XClarity Administrator server
+security:
+- sessionCookie: []
+tags:
+- name: Sessions
+  description: Authenticate and manage XClarity Administrator sessions.
+paths:
+  /sessions:
+    post:
+      tags:
+      - Sessions
+      summary: Create a session
+      description: 'Authenticate to XClarity Administrator with a user ID and password.
+
+        On success the response sets session cookies (`JSESSIONID`, `csrf`,
+
+        `inactivityTimeout`, `user`) and returns a CSRF token that must be
+
+        included as `X-Csrf-Token` on subsequent requests.
+
+        '
+      operationId: createSession
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - UserId
+              - Password
+              properties:
+                UserId:
+                  type: string
+                  description: XClarity Administrator user ID.
+                Password:
+                  type: string
+                  format: password
+                  description: User password.
+      responses:
+        '200':
+          description: Session created.
+          headers:
+            Set-Cookie:
+              description: Session cookies (`JSESSIONID`, `csrf`, `inactivityTimeout`, `user`).
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  csrf:
+                    type: string
+                    description: CSRF token to include as `X-Csrf-Token` on subsequent requests.
+        '401':
+          description: Authentication failed.
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: JSESSIONID
+      description: 'Session cookie issued by `POST /sessions`. Requests also require
+
+        the `X-Csrf-Token` header populated from the session response.
+
+        '
+externalDocs:
+  description: Lenovo XClarity Administrator REST API reference
+  url: https://pubs.lenovo.com/lxca_scripting/rest_apis
