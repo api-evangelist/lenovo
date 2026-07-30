@@ -9,7 +9,19 @@ description: >-
   publishes open-source projects through its GitHub organization, but does not
   operate a general-purpose consumer or partner developer portal.
 kind: company
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/lenovo.png
 tags:
   - Data Center
   - Hardware
@@ -23,28 +35,44 @@ created: '2026-05-05'
 modified: '2026-05-16'
 specificationVersion: '0.19'
 apis:
-  - aid: lenovo:lenovo-xclarity-administrator-rest-api
-    name: Lenovo XClarity Administrator REST API
-    description: >-
-      The Lenovo XClarity Administrator REST API provides programmatic access
-      to XClarity Administrator data and services from applications running
-      outside of the XClarity Administrator framework. It supports managing
-      Lenovo servers, storage, and switches, including inventory, firmware
-      updates, configuration patterns, events, and OS deployment, and is
-      complemented by PowerShell, Python, and Ruby toolkits.
-    humanURL: https://pubs.lenovo.com/lxca_scripting/
-    tags:
-      - Data Center
-      - Infrastructure Management
-      - REST API
-      - Servers
-    properties:
-      - type: Documentation
-        url: https://pubs.lenovo.com/lxca_scripting/
-      - type: APIReference
-        url: https://pubs.lenovo.com/lxca_scripting/rest_apis
-      - type: ProductPage
-        url: https://pubs.lenovo.com/lxca/
+- aid: lenovo:lenovo-xclarity-administrator-rest-api
+  name: Lenovo XClarity Administrator REST API
+  description: >-
+    The Lenovo XClarity Administrator REST API provides programmatic access to XClarity Administrator
+    data and services from applications running outside of the XClarity Administrator framework. It supports
+    managing Lenovo servers, storage, and switches, including inventory, firmware updates, configuration
+    patterns, events, and OS deployment, and is complemented by PowerShell, Python, and Ruby toolkits.
+  humanURL: https://pubs.lenovo.com/lxca_scripting/
+  tags:
+  - Data Center
+  - Infrastructure Management
+  - REST API
+  - Servers
+  properties:
+  - type: Documentation
+    url: https://pubs.lenovo.com/lxca_scripting/
+  - type: APIReference
+    url: https://pubs.lenovo.com/lxca_scripting/rest_apis
+  - type: ProductPage
+    url: https://pubs.lenovo.com/lxca/
+- aid: lenovo:lenovo-inventory-api
+  name: Lenovo Inventory API
+  description: Query inventory of managed devices.
+  humanURL: https://pubs.lenovo.com/lxca_scripting/
+  tags:
+  - Inventory
+  properties:
+  - type: OpenAPI
+    url: openapi/lenovo-inventory-api-openapi.yml
+- aid: lenovo:lenovo-sessions-api
+  name: Lenovo Sessions API
+  description: Authenticate and manage XClarity Administrator sessions.
+  humanURL: https://pubs.lenovo.com/lxca_scripting/
+  tags:
+  - Sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/lenovo-sessions-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/lenovo-agentic-access.yml
