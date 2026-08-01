@@ -1,0 +1,248 @@
+openapi: 3.1.0
+info:
+  title: Lenovo XClarity Administrator REST API
+  description: |
+    Programmatic access to Lenovo XClarity Administrator (LXCA) for managing
+    Lenovo servers, storage, and switches. The API surface includes session
+    authentication, inventory of managed devices (servers, storage,
+    switches, cabinets, canisters), and many other categories (firmware
+    updates, OS deployment, events, jobs, configuration patterns).
+
+    Only a representative subset of inventory and session endpoints is
+    modeled here, drawn directly from the public XClarity Administrator
+    REST API reference. See the documentation links for the full catalog.
+  version: "1.0.0"
+  contact:
+    name: Lenovo XClarity Documentation
+    url: https://pubs.lenovo.com/lxca_scripting/
+  license:
+    name: Lenovo Proprietary
+externalDocs:
+  description: Lenovo XClarity Administrator REST API reference
+  url: https://pubs.lenovo.com/lxca_scripting/rest_apis
+servers:
+  - url: https://{xclarityHost}
+    description: Lenovo XClarity Administrator management server
+    variables:
+      xclarityHost:
+        default: lxca.example.com
+        description: Hostname or IP address of the XClarity Administrator server
+tags:
+  - name: Sessions
+    description: Authenticate and manage XClarity Administrator sessions.
+  - name: Inventory
+    description: Query inventory of managed devices.
+security:
+  - sessionCookie: []
+paths:
+  /sessions:
+    post:
+      tags: [Sessions]
+      summary: Create a session
+      description: |
+        Authenticate to XClarity Administrator with a user ID and password.
+        On success the response sets session cookies (`JSESSIONID`, `csrf`,
+        `inactivityTimeout`, `user`) and returns a CSRF token that must be
+        included as `X-Csrf-Token` on subsequent requests.
+      operationId: createSession
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [UserId, Password]
+              properties:
+                UserId:
+                  type: string
+                  description: XClarity Administrator user ID.
+                Password:
+                  type: string
+                  format: password
+                  description: User password.
+      responses:
+        "200":
+          description: Session created.
+          headers:
+            Set-Cookie:
+              description: Session cookies (`JSESSIONID`, `csrf`, `inactivityTimeout`, `user`).
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  csrf:
+                    type: string
+                    description: CSRF token to include as `X-Csrf-Token` on subsequent requests.
+        "401":
+          description: Authentication failed.
+  /nodes:
+    get:
+      tags: [Inventory]
+      summary: List nodes
+      description: Retrieve properties for all managed servers and Flex System storage devices.
+      operationId: listNodes
+      responses:
+        "200":
+          description: A list of nodes.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nodeList:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Node"
+  /nodes/{uuid}:
+    get:
+      tags: [Inventory]
+      summary: Get a node by UUID
+      description: Retrieve properties for a specific server.
+      operationId: getNode
+      parameters:
+        - name: uuid
+          in: path
+          required: true
+          description: UUID of the managed node.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Node properties.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Node"
+        "404":
+          description: Node not found.
+    put:
+      tags: [Inventory]
+      summary: Modify a node
+      description: |
+        Modify properties of a specific server, including operations such as
+        turning location LEDs on or off.
+      operationId: modifyNode
+      parameters:
+        - name: uuid
+          in: path
+          required: true
+          description: UUID of the managed node.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Properties to modify on the node.
+              additionalProperties: true
+      responses:
+        "200":
+          description: Node updated.
+        "404":
+          description: Node not found.
+  /storage:
+    get:
+      tags: [Inventory]
+      summary: List storage devices
+      description: Retrieve properties for all managed storage devices.
+      operationId: listStorage
+      responses:
+        "200":
+          description: A list of storage devices.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  storageList:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: true
+  /switches:
+    get:
+      tags: [Inventory]
+      summary: List switches
+      description: Retrieve properties for all managed Flex System and RackSwitch switches.
+      operationId: listSwitches
+      responses:
+        "200":
+          description: A list of switches.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  switchList:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: true
+  /canisters:
+    get:
+      tags: [Inventory]
+      summary: List canisters
+      description: Retrieve properties and metrics for all Flex System storage controllers (canisters).
+      operationId: listCanisters
+      responses:
+        "200":
+          description: A list of canisters.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  canisterList:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: true
+  /cabinet:
+    get:
+      tags: [Inventory]
+      summary: List cabinets
+      description: Retrieve properties for all configured cabinets (racks) and the devices placed in them.
+      operationId: listCabinets
+      responses:
+        "200":
+          description: A list of cabinets and their device placements.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: JSESSIONID
+      description: |
+        Session cookie issued by `POST /sessions`. Requests also require
+        the `X-Csrf-Token` header populated from the session response.
+  schemas:
+    Node:
+      type: object
+      description: A managed server or Flex System storage node.
+      properties:
+        uuid:
+          type: string
+          description: Unique identifier of the node.
+        name:
+          type: string
+        machineType:
+          type: string
+        model:
+          type: string
+        serialNumber:
+          type: string
+        status:
+          type: object
+          additionalProperties: true
+      additionalProperties: true

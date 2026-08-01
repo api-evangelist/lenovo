@@ -1,0 +1,16 @@
+{
+  "provider": "lenovo",
+  "sources": [
+    "lenovo-inventory-api-openapi.yml",
+    "lenovo-sessions-api-openapi.yml"
+  ],
+  "outputs": [
+    "lenovo-inventory-api-openapi.yml",
+    "lenovo-sessions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
