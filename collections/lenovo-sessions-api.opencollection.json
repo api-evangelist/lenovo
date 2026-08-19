@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lenovo XClarity Administrator REST Inventory Sessions API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "JSESSIONID",
+      "value": "{{JSESSIONID}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{xclarityHost}/sessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Authenticate to XClarity Administrator with a user ID and password.\nOn success the response sets session cookies (`JSESSIONID`, `csrf`,\n`inactivityTimeout`, `user`) and returns a CSRF token that must be\nincluded as `X-Csrf-Token` on subsequent requests.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,123 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lenovo XClarity Administrator REST Inventory API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "JSESSIONID",
+      "value": "{{JSESSIONID}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Inventory",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List nodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{xclarityHost}/nodes"
+          },
+          "docs": "Retrieve properties for all managed servers and Flex System storage devices."
+        },
+        {
+          "info": {
+            "name": "Get a node by UUID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{xclarityHost}/nodes/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the managed node."
+              }
+            ]
+          },
+          "docs": "Retrieve properties for a specific server."
+        },
+        {
+          "info": {
+            "name": "Modify a node",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{xclarityHost}/nodes/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the managed node."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify properties of a specific server, including operations such as\nturning location LEDs on or off.\n"
+        },
+        {
+          "info": {
+            "name": "List storage devices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{xclarityHost}/storage"
+          },
+          "docs": "Retrieve properties for all managed storage devices."
+        },
+        {
+          "info": {
+            "name": "List switches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{xclarityHost}/switches"
+          },
+          "docs": "Retrieve properties for all managed Flex System and RackSwitch switches."
+        },
+        {
+          "info": {
+            "name": "List canisters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{xclarityHost}/canisters"
+          },
+          "docs": "Retrieve properties and metrics for all Flex System storage controllers (canisters)."
+        },
+        {
+          "info": {
+            "name": "List cabinets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{xclarityHost}/cabinet"
+          },
+          "docs": "Retrieve properties for all configured cabinets (racks) and the devices placed in them."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

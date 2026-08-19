@@ -1,0 +1,231 @@
+{
+  "item": [
+    {
+      "id": "55f48681-0471-483a-9556-85baa8eae47b",
+      "name": "Sessions",
+      "description": {
+        "content": "Authenticate and manage XClarity Administrator sessions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1205da8a-111d-477e-8d22-fbd624254da0",
+          "name": "Create a session",
+          "request": {
+            "name": "Create a session",
+            "description": {
+              "content": "Authenticate to XClarity Administrator with a user ID and password.\nOn success the response sets session cookies (`JSESSIONID`, `csrf`,\n`inactivityTimeout`, `user`) and returns a CSRF token that must be\nincluded as `X-Csrf-Token` on subsequent requests.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the XClarity Administrator server",
+                  "type": "any",
+                  "value": "{{xclarityHost}}",
+                  "key": "xclarityHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"UserId\": \"<string>\",\n  \"Password\": \"<password>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b8f2008a-4685-48d9-94a9-f9796b31746e",
+              "name": "Session created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"UserId\": \"<string>\",\n  \"Password\": \"<password>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Session cookies (`JSESSIONID`, `csrf`, `inactivityTimeout`, `user`).",
+                  "key": "Set-Cookie",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"csrf\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7825cdbf-d4a6-4ac2-bf78-d8238f1ef194",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the XClarity Administrator server",
+                      "type": "any",
+                      "value": "{{xclarityHost}}",
+                      "key": "xclarityHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "JSESSIONID",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"UserId\": \"<string>\",\n  \"Password\": \"<password>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the XClarity Administrator server",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "lxca.example.com",
+      "key": "xclarityHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{xclarityHost}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "JSESSIONID"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a76700c0-5846-4399-b779-1cf432ffa3e0",
+    "name": "Lenovo XClarity Administrator REST Inventory Sessions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Programmatic access to Lenovo XClarity Administrator (LXCA) for managing\nLenovo servers, storage, and switches. The API surface includes session\nauthentication, inventory of managed devices (servers, storage,\nswitches, cabinets, canisters), and many other categories (firmware\nupdates, OS deployment, events, jobs, configuration patterns).\n\nOnly a representative subset of inventory and session endpoints is\nmodeled here, drawn directly from the public XClarity Administrator\nREST API reference. See the documentation links for the full catalog.\n\n\nContact Support:\n Name: Lenovo XClarity Documentation",
+      "type": "text/plain"
+    }
+  }
+}
