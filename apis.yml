@@ -23,6 +23,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/lenovo.png
 tags:
+  - Data-Center
+  - Hardware
+  - Infrastructure
+  - Personal Computers
+  - Servers
+  - Technology
+tags_raw:
   - Data Center
   - Hardware
   - Infrastructure
@@ -44,6 +51,11 @@ apis:
     patterns, events, and OS deployment, and is complemented by PowerShell, Python, and Ruby toolkits.
   humanURL: https://pubs.lenovo.com/lxca_scripting/
   tags:
+  - Data-Center
+  - Infrastructure Management
+  - REST API
+  - Servers
+  tags_raw:
   - Data Center
   - Infrastructure Management
   - REST API
