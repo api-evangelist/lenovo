@@ -1,24 +1,9 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Lenovo XClarity Administrator REST Inventory API
   description: 'Programmatic access to Lenovo XClarity Administrator (LXCA) for managing
 
-    Lenovo servers, storage, and switches. The API surface includes session
-
-    authentication, inventory of managed devices (servers, storage,
-
-    switches, cabinets, canisters), and many other categories (firmware
-
-    updates, OS deployment, events, jobs, configuration patterns).
-
-
-    Only a representative subset of inventory and session endpoints is
-
-    modeled here, drawn directly from the public XClarity Administrator
-
-    REST API reference. See the documentation links for the full catalog.
-
-    '
+    Lenovo servers, storage, and switches.'
   version: 1.0.0
   contact:
     name: Lenovo XClarity Documentation
@@ -86,9 +71,7 @@ paths:
       summary: Modify a node
       description: 'Modify properties of a specific server, including operations such as
 
-        turning location LEDs on or off.
-
-        '
+        turning location LEDs on or off.'
       operationId: modifyNode
       parameters:
       - name: uuid
