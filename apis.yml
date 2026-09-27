@@ -35,7 +35,7 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/lenovo.png
 tags:
-  - Data-Center
+  - Data Center
   - Hardware
   - Infrastructure
   - Personal Computers
@@ -48,6 +48,7 @@ tags_raw:
   - Personal Computers
   - Servers
   - Technology
+  - Data-Center
 url: >-
   https://raw.githubusercontent.com/api-evangelist/lenovo/refs/heads/main/apis.yml
 created: '2026-05-05'
@@ -63,7 +64,7 @@ apis:
     patterns, events, and OS deployment, and is complemented by PowerShell, Python, and Ruby toolkits.
   humanURL: https://pubs.lenovo.com/lxca_scripting/
   tags:
-  - Data-Center
+  - Data Center
   - Infrastructure Management
   - REST API
   - Servers
@@ -72,6 +73,7 @@ apis:
   - Infrastructure Management
   - REST API
   - Servers
+  - Data-Center
   properties:
   - type: Documentation
     url: https://pubs.lenovo.com/lxca_scripting/
