@@ -157,3 +157,40 @@
       P856 not contradicting (Kin 2026-10-20 decision 2)
   status: not-a-workflow
   arazzo: null
+- slug: lenovo-uptime-institute-tier-certification
+  label: Uptime Institute (Tier Certification)
+  partner_name: Uptime Institute (Tier Certification)
+  category: data center facility tier certification
+  type: register
+  channel: standard-directory
+  evidence: https://uptimeinstitute.com/uptime-institute-awards/list/client/lenovo/71
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Uptime Institute Tier Certification / awards list (uptimeinstitute.com/uptime-institute-awards/list)
+    standard: Uptime Institute Tier Standard (Topology / Operational Sustainability)
+    spec_file: null
+    role: tier-certified-operator
+    registered_name: Lenovo
+    register_country: CN
+    register_id: https://uptimeinstitute.com/uptime-institute-awards/list/client/lenovo/71
+    matched_domain: null
+    matched_by: register-name
+    certified_products:
+    - product: M&O Stamp of Approval
+      product_type: M&O Stamp of Approval
+      award_code: MO
+      lapsed: false
+    signal_note: certified_products = one entry per Uptime award TYPE held (design documents, constructed facility,
+      operational sustainability, M&O, Efficient IT), highest tier for that type in partner_tier; facility names
+      and counts are context, never counted; the list shows current awards only (a Provisional constructed-facility
+      award is flagged)
+    facilities_listed: 1
+    detected_by: sweep-data-center-tier-certification.py
+    detected: '2026-10-21'
+    register_name_note: register-name 'lenovo' = lenovo; wikidata P856 lenovo.com agrees or unheld
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null

@@ -150,6 +150,43 @@ edges:
       P856 not contradicting (Kin 2026-10-20 decision 2)
   detected_by: sweep-apple-mfi-ecosystem.py
   first_seen: '2026-10-21'
+- partner_name: Uptime Institute (Tier Certification)
+  partner: null
+  partner_match: register-name
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://uptimeinstitute.com/uptime-institute-awards/list/client/lenovo/71
+  category: data center facility tier certification
+  contract_reference:
+    register: Uptime Institute Tier Certification / awards list (uptimeinstitute.com/uptime-institute-awards/list)
+    standard: Uptime Institute Tier Standard (Topology / Operational Sustainability)
+    spec_file: null
+    role: tier-certified-operator
+    registered_name: Lenovo
+    register_country: CN
+    register_id: https://uptimeinstitute.com/uptime-institute-awards/list/client/lenovo/71
+    matched_domain: null
+    matched_by: register-name
+    certified_products:
+    - product: M&O Stamp of Approval
+      product_type: M&O Stamp of Approval
+      award_code: MO
+      lapsed: false
+    signal_note: certified_products = one entry per Uptime award TYPE held (design documents, constructed facility,
+      operational sustainability, M&O, Efficient IT), highest tier for that type in partner_tier; facility names
+      and counts are context, never counted; the list shows current awards only (a Provisional constructed-facility
+      award is flagged)
+    facilities_listed: 1
+    detected_by: sweep-data-center-tier-certification.py
+    detected: '2026-10-21'
+    register_name_note: register-name 'lenovo' = lenovo; wikidata P856 lenovo.com agrees or unheld
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  detected_by: sweep-data-center-tier-certification.py
+  first_seen: '2026-10-21'
 generated: '2026-10-12'
 method: searched
 checked:
@@ -163,6 +200,10 @@ checked:
 - https://csa-iot.org/csa-iot_products/
 - https://mfi.apple.com/en/account/accessory-search
 - https://partnernetwork.apple.com/
+- https://uptimeinstitute.com/uptime-institute-awards/list
+- https://www.climateneutraldatacentre.net/signatories/
+- https://www.opencompute.org/membership/membership-directory
+- https://www.thegreengrid.org/en/about-us/members
 marketplace_apps: []
 source:
 - https://github.com/lfai/landscape
