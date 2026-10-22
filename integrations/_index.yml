@@ -194,3 +194,213 @@
       P856 not contradicting (Kin 2026-10-20 decision 2)
   status: not-a-workflow
   arazzo: null
+- slug: lenovo-usb-if-certified-products
+  label: USB-IF certified products
+  partner_name: USB-IF certified products
+  category: USB compliance certification
+  type: register
+  channel: standard-directory
+  evidence: https://www.usb.org/products
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: USB-IF certified product list (usb.org/products)
+    standard: USB-IF Compliance Program
+    spec_file: null
+    role: usb-if-certified-product
+    registered_name: Lenovo
+    register_id: https://www.usb.org/products
+    matched_domain: null
+    matched_by: register-name
+    register_name_note: register-name 'lenovo' = lenovo; wikidata P856 lenovo.com agrees or unheld
+    certified_products:
+    - product: USB PD power (chargers, power banks)
+      lapsed: true
+      newest_certification: '2021-05-26'
+    - product: USB cables and connectors
+      lapsed: true
+      newest_certification: '2021-05-12'
+    - product: USB certified product (unclassified)
+      lapsed: true
+      newest_certification: '2014-06-23'
+    - product: USB hubs and docks
+      lapsed: false
+      newest_certification: '2025-04-29'
+    - product: USB peripherals
+      lapsed: false
+      newest_certification: '2026-08-28'
+    - product: USB systems and hosts
+      lapsed: true
+      newest_certification: '2024-03-25'
+    products_sample:
+    - F2070
+    - F2071H
+    - F2081H
+    - F2271H
+    - L190xC
+    - L2221pwA
+    - L2251xwD
+    - L2321pwD
+    signal_note: certified_products = one entry per USB product family, never per product or TID. lapsed = the family's
+      NEWEST certification is older than two years (USB-IF's own list hides those and says they may fail the current
+      Compliance Program)
+    detected_by: sweep-wireless-connectivity-certification.py
+    detected: '2026-10-22'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: lenovo-wi-fi-alliance-certified-products
+  label: Wi-Fi Alliance certified products
+  partner_name: Wi-Fi Alliance certified products
+  category: Wi-Fi certification
+  type: register
+  channel: standard-directory
+  evidence: https://www.wi-fi.org/product-finder
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Wi-Fi Alliance product finder (wi-fi.org/product-finder; prf.cert.wi-fi.org public JSON / CSV)
+    standard: Wi-Fi CERTIFIED
+    spec_file: null
+    role: wi-fi-certified-product
+    registered_name: Lenovo
+    register_id: WFA141755
+    matched_domain: null
+    matched_by: register-name
+    register_name_note: register-name 'lenovo' = lenovo; wikidata P856 lenovo.com agrees or unheld
+    certified_products:
+    - product: Computers & Accessories
+      lapsed: false
+      newest_certification: '2022-05-04'
+      generations:
+      - Wi-Fi 7
+      - Wi-Fi 6
+      - Wi-Fi 5 (ac)
+      - Wi-Fi 4 (n)
+    - product: Gaming, Media & Music
+      lapsed: false
+      newest_certification: '2020-07-22'
+      generations:
+      - Wi-Fi 7
+      - Wi-Fi 6
+      - Wi-Fi 5 (ac)
+      - Wi-Fi 4 (n)
+    - product: Other
+      lapsed: false
+      newest_certification: '2023-08-10'
+      generations:
+      - Wi-Fi 7
+      - Wi-Fi 6
+      - Wi-Fi 5 (ac)
+      - Wi-Fi 4 (n)
+    - product: Phones
+      lapsed: false
+      newest_certification: '2021-04-19'
+      generations:
+      - Wi-Fi 7
+      - Wi-Fi 6
+      - Wi-Fi 5 (ac)
+      - Wi-Fi 4 (n)
+    - product: Routers
+      lapsed: false
+      newest_certification: '2017-06-21'
+      generations:
+      - Wi-Fi 7
+      - Wi-Fi 6
+      - Wi-Fi 5 (ac)
+      - Wi-Fi 4 (n)
+    - product: Tablets, Ereaders & Cameras
+      lapsed: false
+      newest_certification: '2026-10-12'
+      generations:
+      - Wi-Fi 7
+      - Wi-Fi 6
+      - Wi-Fi 5 (ac)
+      - Wi-Fi 4 (n)
+    - product: Televisions & Set Top Boxes
+      lapsed: false
+      newest_certification: '2013-04-01'
+      generations:
+      - Wi-Fi 7
+      - Wi-Fi 6
+      - Wi-Fi 5 (ac)
+      - Wi-Fi 4 (n)
+    products_sample:
+    - A606
+    - IBM 11a/b/g Wireless CardBus Adapter
+    - IBM 11a/b/g wireless LAN Mini PCI Adapter II
+    - IBM 11b/g Wireless LAN Mini PCI Adapter
+    - IBM Access Point AP500
+    - 'IBM Access Point Model # 9085'
+    - IBM High Rate Wireless LAN Gateway
+    - IBM High Rate Wireless LAN Gateway Model# 22P6401
+    signal_note: certified_products = one entry per Wi-Fi Alliance product category, never per product, variant
+      or CID; generations are context. Wi-Fi CERTIFIED does not expire and the finder marks nothing withdrawn, so
+      lapsed is false
+    detected_by: sweep-wireless-connectivity-certification.py
+    detected: '2026-10-22'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: lenovo-us-epa-energy-star
+  label: US EPA ENERGY STAR
+  partner_name: US EPA ENERGY STAR
+  category: ENERGY STAR product certification
+  type: register
+  channel: standard-directory
+  evidence: https://data.energystar.gov/d/8wj2-sec8
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: ENERGY STAR Model Index, all currently certified models (data.energystar.gov/resource/8wj2-sec8)
+    standard: ENERGY STAR (US EPA product specifications)
+    spec_file: null
+    role: energy-star-partner
+    registered_name: Lenovo Group Limited
+    register_id: https://data.energystar.gov/d/8wj2-sec8
+    matched_domain: lenovo.com
+    matched_by: domain
+    certified_products:
+    - product: Computers
+      product_type: Computers
+      lapsed: false
+      brands:
+      - Lenovo
+      - Motorola
+      first_certified: '2024-04-15'
+    - product: Data Center Storage
+      product_type: Data Center Storage
+      lapsed: false
+      brands:
+      - Lenovo
+      - Lenovo (United States) Inc.
+      first_certified: '2017-08-01'
+    - product: Displays
+      product_type: Displays
+      lapsed: false
+      brands:
+      - HAILAN
+      - Lenovo
+      first_certified: '2018-04-25'
+    - product: Enterprise Servers
+      product_type: Enterprise Servers
+      lapsed: false
+      brands:
+      - Lenovo
+      first_certified: '2023-08-24'
+    connected_product_types: []
+    signal_note: 'certified_products = ONE entry per ENERGY STAR product category with a currently certified model
+      (the Model Index lists current certifications only, so lapsed is False; delisted models drop out); connected:
+      true where the category''s dataset flags connected / network capability for this partner''s models (Smart
+      Thermostats and Connected lighting are connected by definition). Brands are context; model counts are never
+      counted.'
+    detected_by: sweep-energy-star-certified-products.py
+    detected: '2026-10-22'
+    identity: wikidata Q14799 'Lenovo' P856 https://www.lenovo.com/
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  status: not-a-workflow
+  arazzo: null
