@@ -505,3 +505,16 @@
     identity_source: register website (CMVP certificate Vendor panel)
   status: not-a-workflow
   arazzo: null
+- slug: lenovo-chef-software-chef-supermarket
+  label: Chef Software (chef-supermarket)
+  partner: chef-software
+  partner_name: Chef Software (chef-supermarket)
+  category: configuration-management content listing (Chef cookbook)
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/chef-cnos
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
