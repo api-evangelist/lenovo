@@ -1,4 +1,4 @@
-# Lenovo (lenovo)
+# Lenovo
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,59 +66,100 @@
 
 Lenovo Group is a Chinese multinational technology company and one of the world's largest personal computer vendors by unit sales. Lenovo designs, manufactures, and sells PCs, tablets, smartphones, workstations, servers, storage, and data center infrastructure solutions globally. Lenovo exposes a REST API for its XClarity Administrator data center management platform and publishes open-source projects through its GitHub organization, but does not operate a general-purpose consumer or partner developer portal.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/lenovo/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/lenovo/refs/heads/main/apis.yml)
+**Areas:** Data Center · Hardware · Infrastructure · Personal Computers · Servers · Technology
 
-## Tags
+## Lenovo on APIs.io
 
-- Data Center
-- Hardware
-- Infrastructure
-- Personal Computers
-- Servers
-- Technology
+Everything profiled for Lenovo is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/lenovo/](https://apis.io/providers/lenovo/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (3)
 
-- **Created:** 2026-05-05
-- **Modified:** 2026-05-16
+- [Lenovo XClarity Administrator REST API](https://apis.io/apis/lenovo/lenovo-xclarity-administrator-rest-api/) — The Lenovo XClarity Administrator REST API provides programmatic access to XClarity Administrator data and services from applications running outside of the…
+- [Lenovo Inventory API](https://apis.io/apis/lenovo/lenovo-inventory-api/) — Query inventory of managed devices.
+- [Lenovo Sessions API](https://apis.io/apis/lenovo/lenovo-sessions-api/) — Authenticate and manage XClarity Administrator sessions.
 
-## APIs
+### Published properties
 
-### Lenovo XClarity Administrator REST API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The Lenovo XClarity Administrator REST API provides programmatic access to XClarity Administrator data and services from applications running outside of the XClarity Administrator framework. It supports managing Lenovo servers, storage, and switches, including inventory, firmware updates, configuration patterns, events, and OS deployment, and is complemented by PowerShell, Python, and Ruby toolkits.
+#### Agentic access (1)
 
-- **Human URL:** [https://pubs.lenovo.com/lxca_scripting/](https://pubs.lenovo.com/lxca_scripting/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Lenovo Agentic Access](https://apis.io/agentic-access/lenovo/lenovo-agentic-access/)
 
-- Data Center
-- Infrastructure Management
-- REST API
-- Servers
+#### Collections (3)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://pubs.lenovo.com/lxca_scripting/)
-- [API Reference](https://pubs.lenovo.com/lxca_scripting/rest_apis)
-- [Product Page](https://pubs.lenovo.com/lxca/)
-- [Postman Collection](collections/lenovo.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/lenovo.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Lenovo XClarity Administrator REST API](https://apis.io/collections/lenovo/open-lenovo/)
+- [Lenovo XClarity Administrator REST Inventory API](https://apis.io/collections/lenovo/open-lenovo-inventory-api/)
+- [Lenovo XClarity Administrator REST Inventory Sessions API](https://apis.io/collections/lenovo/open-lenovo-sessions-api/)
 
-## Common Properties
+#### Security (2)
 
-- [LinkedIn](https://www.linkedin.com/company/lenovo)
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Lenovo Authentication](https://apis.io/security/lenovo/lenovo-authentication/)
+- [Lenovo Domain Security](https://apis.io/security/lenovo/lenovo-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.lenovo.com/)
-- [About Us](https://www.lenovo.com/us/en/about/)
-- [Products](https://www.lenovo.com/us/en/d/sale/all-products/)
-- [Data Center Support](https://datacentersupport.lenovo.com/)
-- [Partner Hub](https://www.lenovopartnerhub.com/)
-- [GitHub Organization](https://github.com/lenovo)
-- [Investor Relations](https://investor.lenovo.com/)
-- [News](https://news.lenovo.com/)
-- [Careers](https://www.lenovo.com/us/en/about/careers/)
+- [Blog](https://news.lenovo.com/feed/)
+- [GitHub](https://github.com/lenovo)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 22.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 58.0 |
+| Contract quality | 47.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 31.0 |
+| Access clarity | 0.0 |
+
+**Agent readiness 17.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/lenovo/](https://apis.io/providers/lenovo/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Lenovo: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/lenovo/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
